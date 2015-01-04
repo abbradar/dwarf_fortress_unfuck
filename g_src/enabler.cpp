@@ -495,6 +495,7 @@ void enablerst::eventLoop_SDL()
         enabler.flag|=ENABLERFLAG_RENDER;
         break;
       case SDL_VIDEORESIZE:
+        gamelog << "Resize event: " << event.resize.w << "x" << event.resize.h << endl << flush;
         if (is_fullscreen());
           //errorlog << "Caught resize event in fullscreen??\n";
         else {
